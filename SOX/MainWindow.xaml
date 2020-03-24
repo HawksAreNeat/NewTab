@@ -1,0 +1,312 @@
+﻿<Window x:Class="SOX.MainWindow"         xmlns:local="clr-namespace:SOX"         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        
+        
+        
+        
+        
+        
+        
+        
+       Title="MainWindow" Height="320" Width="585" Background="{x:Null}" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" MouseLeftButtonDown="Sentinel_MouseLeftButtonDown" Icon="Skintelnt.png">
+    <Grid>
+
+
+
+
+        <Border CornerRadius="10" Background="#FF191919" BorderThickness="1.4">
+
+
+
+
+
+
+            <Grid Margin="4,0,-2,0" Name="Body2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="254*"/>
+                </Grid.RowDefinitions>
+                <Border BorderThickness="1" Grid.Row="0"
+        CornerRadius="9.8,9.8,5,5" Background="#FF121212" Margin="-5,-1,1,13"/>
+                <Button x:Name="Close" Content="X" HorizontalAlignment="Left" Margin="541,2,0,0" VerticalAlignment="Top" Width="32" Height="28" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="14" FontFamily="Comic Sans MS" RenderTransformOrigin="1.094,0.84" Click="Close_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+
+                            <Border x:Name="bdr_main" CornerRadius="20" Margin="-2" BorderThickness="1" BorderBrush="#FF121212" Background="#FF121212">
+
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="#FFEE1D1D"/>
+
+                                </Trigger>
+
+                                <Trigger Property="IsPressed" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="Red"/>
+
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="Minimize" Content="-" HorizontalAlignment="Left" Margin="500,2,0,0" VerticalAlignment="Top" Width="32" Height="28" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="14" FontFamily="Comic Sans MS" RenderTransformOrigin="1.094,0.84" Click="Minimize_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+
+                            <Border x:Name="bdr_main" CornerRadius="20" Margin="-3" BorderThickness="1" BorderBrush="#FF121212" Background="#FF121212">
+
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="#FFEE1D1D"/>
+
+                                </Trigger>
+
+                                <Trigger Property="IsPressed" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="Red"/>
+
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <avalonedit:TextEditor xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" x:Name="Executor" HorizontalAlignment="Left" Margin="738,45,0,0" VerticalAlignment="Top" Height="222" Width="498" ShowLineNumbers="True" Foreground="White" LineNumbersForeground="White" Background="#FF121212" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.RowSpan="2">
+                    <avalonedit:TextEditor.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9.8,9.8,9.8,9.8"/>
+                        </Style>
+                    </avalonedit:TextEditor.Resources>
+                </avalonedit:TextEditor>
+                <Button x:Name="Attach" Content="Attach" HorizontalAlignment="Left" Margin="0,44,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="#FF191919" Foreground="White" BorderBrush="{x:Null}" Click="Attach_Click" Grid.Row="1" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+
+                            <Border x:Name="bdr_main" CornerRadius="20" Margin="4" BorderThickness="1" BorderBrush="#FF191919" Background="#FF191919">
+
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="#FFEE1D1D"/>
+
+                                </Trigger>
+
+                                <Trigger Property="IsPressed" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="Red"/>
+
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Execute" Content="Execute" HorizontalAlignment="Left" Margin="0,82,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Click="Execute_Click" Grid.Row="1">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+
+                            <Border x:Name="bdr_main" CornerRadius="20" Margin="4" BorderThickness="1" BorderBrush="#FF191919" Background="#FF191919">
+
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="#FFEE1D1D"/>
+
+                                </Trigger>
+
+                                <Trigger Property="IsPressed" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="Red"/>
+
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Clear" Content="Clear" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Click="Clear_Click" Grid.Row="1">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+
+                            <Border x:Name="bdr_main" CornerRadius="20" Margin="4" BorderThickness="1" BorderBrush="#FF191919" Background="#FF191919">
+
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="#FFEE1D1D"/>
+
+                                </Trigger>
+
+                                <Trigger Property="IsPressed" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="Red"/>
+
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="0,156,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Click="Save_Click" Grid.Row="1">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+
+                            <Border x:Name="bdr_main" CornerRadius="20" Margin="4" BorderThickness="1" BorderBrush="#FF191919" Background="#FF191919">
+
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="#FFEE1D1D"/>
+
+                                </Trigger>
+
+                                <Trigger Property="IsPressed" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="Red"/>
+
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <avalonedit:TextEditor x:Name="N2ewTab" xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" HorizontalAlignment="Left" VerticalAlignment="Top" Height="208" Width="461" ShowLineNumbers="True" Foreground="White" LineNumbersForeground="White" Background="#FF121212" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="764,-2,0,0" Grid.RowSpan="2">
+                    <avalonedit:TextEditor.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="1,9.8,9.8,9.8"/>
+                        </Style>
+                    </avalonedit:TextEditor.Resources>
+                </avalonedit:TextEditor>
+
+
+
+
+
+                <Button x:Name="Open" Content="Open" HorizontalAlignment="Left" Margin="0,192,0,0" VerticalAlignment="Top" Width="88" Height="36" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Click="Open_Click" Grid.Row="1">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+
+                            <Border x:Name="bdr_main" CornerRadius="20" Margin="4" BorderThickness="1" BorderBrush="#FF191919" Background="#FF191919">
+
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,6,8,6" ContentSource="Content" />
+
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="#FFEE1D1D"/>
+
+                                </Trigger>
+
+                                <Trigger Property="IsPressed" Value="True">
+
+                                    <Setter TargetName="bdr_main" Property="Background" Value="Red"/>
+
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Image HorizontalAlignment="Left" Height="27" Margin="2,6,0,0" VerticalAlignment="Top" Width="30" Source="Skintelnt.png"/>
+                <TabControl Name="EditorTabs" Background="#181818" BorderThickness="0" Style="{DynamicResource Tabs}" Margin="88,19,136,15" Grid.Row="1">
+                    <TabControl.Resources>
+                        <Style TargetType = "{x:Type Border}" >
+                            <Setter Property="CornerRadius" Value="1,9.8,9.8,9.8"/>
+                        </Style>
+                    </TabControl.Resources>
+
+
+                    <TabItem Name="OutputTab" Header="Output" Style="{DynamicResource Tab}">
+                        <TabItem.Resources>
+                            <Style TargetType = "{x:Type Border}" >
+                                <Setter Property="CornerRadius" Value="1,9.8,9.8,9.8"/>
+                            </Style>
+                        </TabItem.Resources>
+                        <avalonedit:TextEditor
+											Name="Output"
+											Background="#FF121212"
+											Control.Foreground="#f7f1ff"
+											Margin="-2,-3,4,9"
+											Control.FontFamily="Consolas"
+											UIElement.IsEnabled="True"
+											IsReadOnly="True"
+											WordWrap="True"
+											HorizontalScrollBarVisibility="Disabled" xmlns:avalonedit="clr-namespace:ICSharpCode.AvalonEdit;assembly=ICSharpCode.AvalonEdit">
+
+                            <avalonedit:TextEditor.Resources>
+                                <Style TargetType = "{x:Type Border}" >
+                                    <Setter Property="CornerRadius" Value="1,9.8,9.8,9.8"/>
+                                </Style>
+                            </avalonedit:TextEditor.Resources>
+                        </avalonedit:TextEditor>
+                    </TabItem>
+                </TabControl>
+                <ScrollViewer x:Name="scripts" Background="#FF121212" Margin="450,45,10,30" Grid.Row="1" >
+                    <Grid VerticalAlignment="Top">
+                        <FrameworkElement.Resources>
+                            <ResourceDictionary>
+                                <Style BasedOn="{StaticResource ListButton}" TargetType="{x:Type Button}" x:Key="{x:Type Button}" />
+                                <Style TargetType = "{x:Type Border}" >
+                                    <Setter Property="CornerRadius" Value="1,9.8,9.8,9.8"/>
+                                </Style>
+                            </ResourceDictionary>
+                        </FrameworkElement.Resources>
+                        <Border Name="SVContainer" />
+                    </Grid>
+                    <ScrollViewer.Resources>
+                        <Style TargetType = "{x:Type Border}" >
+                            <Setter Property="CornerRadius" Value="1,9.8,9.8,9.8"/>
+                        </Style>
+                    </ScrollViewer.Resources>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
